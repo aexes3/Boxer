@@ -1,23 +1,18 @@
 //NMPs:
-const fs = require("fs"); // Read and write
 const request = require("request");
 const chalk = require("chalk");
 
-// Establish actions for LIRI to take
-const action = process.argv[2];
-
-//// BANDS IN TOWN ////
+let two = process.argv[2];
 
 function itemsForSale() {
-  let keywords = process.argv[3];
-  if (keywords === undefined) {
-    console.log(chalk.red(`\nerror!.\n`));
+  let three = process.argv[3];
+  
     minPrice = "&min_price=5"
     maxPrice = "&max_price=15"
     tags = "&tags=dachshund_handcrafted";
-    api = "guys, fill this in please with what I slacked you"
-  }
-
+    api = "&api_key=2ds0prvu2hqgcjocnj71ioss"
+  
+  
   const queryURL =
   "https://openapi.etsy.com/v2/listings/active?limit=25&includes=Images:1&state=active&category_path=Pets&category=pet_supplies" + api + minPrice + maxPrice + tags;
 
