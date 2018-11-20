@@ -1,0 +1,11 @@
+.hide {
+    display: none;
+}
+
+body {
+    color: rgb(56, 52, 52);
+}
+
+.jumbotron {
+    text-align: center;
+}
