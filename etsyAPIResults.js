@@ -10,7 +10,7 @@ function itemsForSale() {
     minPrice = "&min_price=5"
     maxPrice = "&max_price=15"
     tags = "&tags=dachshund_handcrafted";
-    api = "&api_key=2ds0prvu2hqgcjocnj71ioss"
+   
   
   
   const queryURL =
