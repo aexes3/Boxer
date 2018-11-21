@@ -4,8 +4,23 @@
 
 body {
     color: rgb(56, 52, 52);
+    height: 100%;
 }
 
 .jumbotron {
     text-align: center;
+}
+
+.navbar img {
+    border-radius: 15%;
+}
+
+.parallax {
+    background-image: url('../img/pooping.JPG');
+    height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
