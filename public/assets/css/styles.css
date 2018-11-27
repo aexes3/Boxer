@@ -1,10 +1,10 @@
-.hide {
-    display: none;
-}
-
-body {
+body, html{
     color: rgb(56, 52, 52);
     height: 100%;
+}
+
+.hide {
+    display: none;
 }
 
 .jumbotron {
@@ -16,7 +16,7 @@ body {
 }
 
 .parallax {
-    background-image: url('../img/pooping.JPG');
+    background-image: url('../img/pooping.jpg');
     height: 100%; 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -24,3 +24,31 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.doghat{
+    background-image: url('../img/doghat.jpeg');
+    height: 100%; 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+  
+  input.new-item:focus {
+    outline: none;
+  }
+  
+  .list-group-item > button.delete,
+  .list-group-item > button.complete {
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+  }
+  
+  .edit {
+    width: 100%;
+  }
+  
