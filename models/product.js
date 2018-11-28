@@ -1,7 +1,7 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var Product = sequelize.define("Product", {
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       // AllowNull is a flag that restricts a product from being entered if it doesn't
       // have a title value
       allowNull: false,
@@ -19,27 +19,3 @@ module.exports = function (sequelize, DataTypes) {
   });
   return Product;
 };
-
-// module.exports = function(sequelize, DataTypes) {
-//     var Post = sequelize.define("Post", {
-//       title: {
-//         type: DataTypes.STRING,
-//         allowNull: false,
-//         validate: {
-//           len: [1]
-//         }
-//       },
-//       body: {
-//         type: DataTypes.TEXT,
-//         allowNull: false,
-//         validate: {
-//           len: [1]
-//         }
-//       },
-//       category: {
-//         type: DataTypes.STRING,
-//         defaultValue: "Personal"
-//       }
-//     });
-//     return Post;
-//   };
