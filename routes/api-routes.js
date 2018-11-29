@@ -5,9 +5,9 @@ const request = require("request");
 // Routes
 module.exports = function(app) {
   app.get("/api/getproducts", function(req, res) {
-    let minPrice = "&min_price=5";
-    let maxPrice = "&max_price=15";
-    let tags = "&tags=dachshund_handcrafted";
+    let minPrice = "&min_price=3";
+    let maxPrice = "&max_price=14";
+    let tags = "&tags=dog_funny";
     let api = "&api_key=2ds0prvu2hqgcjocnj71ioss";
 
     const queryURL =
@@ -43,6 +43,13 @@ module.exports = function(app) {
       }
     })
   });
+
+
+  // firebase code to load data into our mysql database goes here  
+  // https://www.ipragmatech.com/data-sync-firebase-mysql/
+  // https://zapier.com/apps/firebase/integrations/mysql
+
+
           // GET route products
           app.get("/api/products", function(req, res) {
             db.Product.findAll({}).then(function(dbProduct) {
@@ -86,3 +93,11 @@ module.exports = function(app) {
               });
           });
 };
+
+
+//   //       "https://openapi.etsy.com/v2/listings/active?limit=25&includes=Images:1&state=active&category_path=Pets&category=pet_supplies&api_key=2ds0prvu2hqgcjocnj71ioss&min_price=3&max_price=14&tags=dog_funny";
+
+//     //     "https://openapi.etsy.com/v2/listings/active?limit=5&includes=Images:1&state=active&category_path=Pets&category=pet_supplies&api_key=2ds0prvu2hqgcjocnj71ioss&min_price=3&max_price=4&tags=dog_balm";
+
+//         // request("https://openapi.etsy.com/v2/listings/active?limit=5&includes=Images:1&state=active&category_path=Pets&category=pet_supplies&api_key=2ds0prvu2hqgcjocnj71ioss&min_price=3&max_price=4&tags=dog_balm"
+
