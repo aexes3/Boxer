@@ -1,8 +1,4 @@
-$(document).ready(function() {
-  // Getting a reference to the input field where user adds a new product
-  // var $newItemInput = $("input.new-item");
-  // Our new products will go inside the productContainer
-  
+$(document).ready(function() {  
   // Set up variables for each of product columns
   
   // SMALL CUSTOM BOX
@@ -18,19 +14,10 @@ $(document).ready(function() {
   // LARGE SPECIALTY BOX 
 
 
-  // Adding event listeners for deleting, editing, and adding products
- 
-  // $(document).on("click", "button.complete", toggleComplete);
-  // $(document).on("click", ".product-item", editProduct);
-  // $(document).on("keyup", ".product-item", finishEdit);
-  // $(document).on("blur", ".product-item", cancelEdit);
-  
-  // Initial products array
-
-  // Getting products from database when page loads
+  // Get products from database when page loads
   getProducts();
 
-  // This function resets the products displayed with new products from the database
+  // Resets the products displayed with new products from the database
   function initializeRows(products) {
     smBox4.empty();
     smBox5.empty();
@@ -46,7 +33,7 @@ $(document).ready(function() {
     smBox14.prepend(rowsToAdd);
   }
 
-  // This function grabs products from the database and updates the view
+  // Grabs products from the database and updates the view
   function getProducts() {
     $.get("/api/products", function(products) {
       // console.log("products are:", products);
@@ -58,24 +45,6 @@ $(document).ready(function() {
       initializeRows(products);
     });
   }
-
-    // This function handles showing the input box for a user to edit a product
-  // function editProduct() {
-  //   var currentProduct = $(this).data("product");
-  //   $(this).children().hide();
-  //   $(this).children("input.edit").val(currentProduct.title);
-  //   $(this).children("input.edit").show();
-  //   $(this).children("input.edit").focus();
-  // }
-
-  // Toggles complete status
-  // function toggleComplete(event) {
-  //   event.stopPropagation();
-  //   var product = $(this).parent().data("product");
-  //   product.complete = !product.complete;
-  //   updateProduct(product);
-  // }
-
 
   // MIGHT NEED THIS... 
   // This function starts updating a product in the database if a user hits the "Enter Key"
@@ -98,19 +67,7 @@ $(document).ready(function() {
     }).then(getProducts);
   }
 
-  // This function is called whenever a product item is in edit mode and loses focus
-  // This cancels any edits being made
-  // function cancelEdit() {
-  //   var currentProduct = $(this).data("product");
-  //   if (currentProduct) {
-  //     $(this).children().hide();
-  //     $(this).children("input.edit").val(currentProduct.title);
-  //     $(this).children("span").show();
-  //     $(this).children("button").show();
-  //   }
-  // }
-
-  // This function constructs a product-item row
+  // Constructs a product-item row
   function createNewRow(product) {
     var $newInputRow = $(
     `<input type="radio" id="${product.title}" value="${product.title}">
@@ -119,13 +76,8 @@ $(document).ready(function() {
     );
     // mdn article radio button to select only one
 
-    $newInputRow.find("input.edit").css("display", "none");
+    // $newInputRow.find("input.edit").css("display", "none");
     $newInputRow.data("product", product);
-    // if (product.complete) {
-    //   $newInputRow.find("span").css("text-decoration", "line-through");
-    //   console.log("product:", product);
-
-    // }
     return $newInputRow;
   }
 });
