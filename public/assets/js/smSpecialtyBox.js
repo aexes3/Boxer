@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('[data-toggle="popover"]').popover(); 
+
   // SMALL SPECIALTY BOX: Creates $4 column
   function createSmSpecialtyBox4() {
     let smSpecialtyBox4 = $(".smSpecialtyBox4");
@@ -44,20 +46,30 @@ $(document).ready(function() {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    // function updateProduct(product) {
+    //   $.ajax({
+    //     method: "PUT",
+    //     url: "/api/soldItems",
+    //     data: product
+    //   }).then(getProducts);
+    // }
+
+    
+
+    // Constructs a product-item row
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="4" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
   // SMALL SPECIALTY BOX: Creates $5 column
   function createSmSpecialtyBox5() {
@@ -104,20 +116,20 @@ function createNewRow(product) {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    // Constructs a product-item row
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="4" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
   // SMALL SPECIALTY BOX: Creates $9 column
   function createSmSpecialtyBox9() {
@@ -164,20 +176,20 @@ function createNewRow(product) {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    // Constructs a product-item row
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="9" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
   // SMALL SPECIALTY BOX: Creates $15 column
   function createSmSpecialtyBox15() {
@@ -224,20 +236,20 @@ function createNewRow(product) {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    // Constructs a product-item row
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="4" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
   createSmSpecialtyBox4();
   createSmSpecialtyBox5();
@@ -247,7 +259,7 @@ function createNewRow(product) {
   let form = document.querySelector("#smSpecialtyBoxForm");
 
   form.addEventListener(
-    "submit",
+    "smSpecialtySubmit",
     function(event) {
       let data = new FormData(form);
       // let output = "";

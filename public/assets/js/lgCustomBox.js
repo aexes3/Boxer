@@ -1,10 +1,11 @@
 $(document).ready(function() {
+  $('[data-toggle="popover"]').popover();
 
   // LARGE CUSTOM BOX: Creates $4 column
   function createLgBox4() {
     let lgBox4 = $(".lgBox4");
-      // Get products from database when page loads
 
+    // Get products from database when page loads
     getProducts();
 
     // Resets the products displayed with new products from the database
@@ -45,12 +46,12 @@ $(document).ready(function() {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
+    // Constructs a product-item row
 function createNewRow(product) {
   var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
+    `<input type="radio" name="4" id="${product.product_ID}" 
+  value="${product.product_ID}">
+  <label for="${product.product_ID}">
   <a href="#" data-toggle="popover" title="${product.title}">
   <img src="${product.imageURL}" margin="2%" width="175" height="175">
   </img></a></label></input>`
@@ -108,9 +109,9 @@ function createNewRow(product) {
 // Constructs a product-item row
 function createNewRow(product) {
   var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
+    `<input type="radio" name="4" id="${product.product_ID}" 
+  value="${product.product_ID}">
+  <label for="${product.product_ID}">
   <a href="#" data-toggle="popover" title="${product.title}">
   <img src="${product.imageURL}" margin="2%" width="175" height="175">
   </img></a></label></input>`
@@ -123,8 +124,8 @@ function createNewRow(product) {
   // LARGE BOX: Creates $8 column
   function createLgBox8() {
     let lgBox8 = $(".lgBox8");
-      // Get products from database when page loads
 
+    // Get products from database when page loads
     getProducts();
 
     // Resets the products displayed with new products from the database
@@ -165,20 +166,20 @@ function createNewRow(product) {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    // Constructs a product-item row
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="4" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
   // LARGE BOX: Creates $14 column
   function createLgBox14() {
@@ -225,20 +226,20 @@ function createNewRow(product) {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.shop_section_id}" 
-  value="${product.shop_section_id}">
-  <label for="${product.shop_section_id}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    // Constructs a product-item row
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="4" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
   createLgBox4();
   createLgBox5();
@@ -255,11 +256,11 @@ function createNewRow(product) {
 
       for (const entry of data) {
         // output = entry[0] + " = " + entry[1] + "\r";
-      for (var i = 0; i < entry.length; i++) {
-console.log("entry[i]", entry[i])
-console.log(entry);
+        for (var i = 0; i < entry.length; i++) {
+          console.log("entry[i]", entry[i]);
+          console.log(entry);
+        }
       }
-    }
       event.preventDefault();
     },
     false
