@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
         autoIncrement: true,
         primaryKey: true
       },
-      listingID: {//satus from etsy
+      product_ID: {//satus from etsy
         type: DataTypes.INTEGER,
         allowNull: true,
         validate: {
