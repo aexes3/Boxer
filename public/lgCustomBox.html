@@ -45,51 +45,47 @@
   </head>
 
   <body>
-    <div class="lgBoxContainer">
-      <form id="lgBoxForm">
+    <div class="container">
+      <form id="smBoxForm">
+        <div class="jumbotron">
+          <h1 class="font-bold howitworks">What looks good this month?</h1>
+          <h2 class="pick-a-box font-bold font-20">
+            Choose one item from each column, then click
+            <button
+              type="submit"
+              onclick="window.location.href = 'cart.html';"
+              value="Link"
+              class="btn"
+              name="lgBoxSubmit">
+              Buy My Box
+            </button>
+          </h2>
+        </div>
         <div class="row">
+          
           <!-- $4 range -->
-          <div class="col-2">
-            <h4>four dollar</h4>
-            <ul class="list-group product-list">
+          <div class="col-3">
               <div class="lgBox4"></div>
-            </ul>
-          </div>
-
-          <!-- $4 range -->
-          <div class="col-2">
-            <h4>four dollar</h4>
-            <ul class="list-group product-list">
-              <div class="lgBox4"></div>
-            </ul>
           </div>
 
           <!-- $5 range -->
-          <div class="col-2">
-            <h4>five dollar</h4>
+          <div class="col-3">
             <ul class="list-group product-list">
               <div class="lgBox5"></div>
-            </ul>
           </div>
 
           <!-- $8 range -->
-          <div class="col-2">
-            <h4>eight dollar</h4>
+          <div class="col-3">
             <ul class="list-group product-list">
-              <div class="lgBox8"></div>
-            </ul>
+              <div class="lgBox9"></div>
           </div>
 
           <!-- $14 range -->
-          <div class="col-2">
-            <h4>fourteen dollar</h4>
+          <div class="col-3">
             <ul class="list-group product-list">
               <div class="lgBox14"></div>
-            </ul>
           </div>
         </div>
-
-        <button type="submit" class="btn" name="lgBoxSubmit">Buy My Box</button>
       </form>
     </div>
 
