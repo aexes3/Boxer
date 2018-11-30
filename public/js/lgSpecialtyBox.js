@@ -1,21 +1,21 @@
 $(document).ready(function() {
   $('[data-toggle="popover"]').popover();
 
-  // LARGE CUSTOM BOX: Creates $4 column
-  function createLgBox4() {
-    let lgBox4 = $(".lgBox4");
+  // LARGE SPECIALTY BOX: Creates $4 column
+  function createLgSpecialtyBox4() {
+    let lgSpecialtyBox4 = $(".lgSpecialtyBox4");
 
     // Get products from database when page loads
     getProducts();
 
     // Resets the products displayed with new products from the database
     function initializeRows(products) {
-      lgBox4.empty();
+      lgSpecialtyBox4.empty();
       var rowsToAdd = [];
       for (var i = 0; i < 5; i++) {
         rowsToAdd.push(createNewRow(products[i]));
       }
-      lgBox4.prepend(rowsToAdd);
+      lgSpecialtyBox4.prepend(rowsToAdd);
     }
 
     // Grabs products from the database and updates the view
@@ -47,35 +47,35 @@ $(document).ready(function() {
     }
 
     // Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.product_ID}" 
-  value="${product.product_ID}">
-  <label for="${product.product_ID}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="4" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
-  // LARGE CUSTOM BOX: Creates $5 column
-  function createLgBox5() {
-    let lgBox5 = $(".lgBox5");
+  // LARGE SPECIALTY BOX: Creates $5 column
+  function createLgSpecialtyBox5() {
+    let lgSpecialtyBox5 = $(".lgSpecialtyBox5");
 
     // Get products from database when page loads
     getProducts();
 
     // Resets the products displayed with new products from the database
     function initializeRows(products) {
-      lgBox5.empty();
+      lgSpecialtyBox5.empty();
       var rowsToAdd = [];
       for (var i = 0; i < 5; i++) {
         rowsToAdd.push(createNewRow(products[i]));
       }
-      lgBox5.prepend(rowsToAdd);
+      lgSpecialtyBox5.prepend(rowsToAdd);
     }
 
     // Grabs products from the database and updates the view
@@ -106,41 +106,41 @@ function createNewRow(product) {
       }).then(getProducts);
     }
 
-// Constructs a product-item row
-function createNewRow(product) {
-  var $newInputRow = $(
-    `<input type="radio" name="4" id="${product.product_ID}" 
-  value="${product.product_ID}">
-  <label for="${product.product_ID}">
-  <a href="#" data-toggle="popover" title="${product.title}">
-  <img src="${product.imageURL}" margin="2%" width="175" height="175">
-  </img></a></label></input>`
-  );
-  $newInputRow.data("product", product);
-  return $newInputRow;
-}
-}
+    // Constructs a product-item row
+    function createNewRow(product) {
+      var $newInputRow = $(
+        `<input type="radio" name="4" id="${product.product_ID}" 
+      value="${product.product_ID}">
+      <label for="${product.product_ID}">
+      <a href="#" data-toggle="popover" title="${product.title}">
+      <img src="${product.imageURL}" margin="2%" width="175" height="175">
+      </img></a></label></input>`
+      );
+      $newInputRow.data("product", product);
+      return $newInputRow;
+    }
+    }
 
-  // LARGE BOX: Creates $8 column
-  function createLgBox8() {
-    let lgBox8 = $(".lgBox8");
+  // LARGE SPECIALTY BOX: Creates $9 column
+  function createLgSpecialtyBox9() {
+    let lgSpecialtyBox9 = $(".lgSpecialtyBox9");
 
     // Get products from database when page loads
     getProducts();
 
     // Resets the products displayed with new products from the database
     function initializeRows(products) {
-      lgBox8.empty();
+      lgSpecialtyBox9.empty();
       var rowsToAdd = [];
       for (var i = 0; i < 5; i++) {
         rowsToAdd.push(createNewRow(products[i]));
       }
-      lgBox8.prepend(rowsToAdd);
+      lgSpecialtyBox9.prepend(rowsToAdd);
     }
 
     // Grabs products from the database and updates the view
     function getProducts() {
-      $.get("/api/8products", function(products) {
+      $.get("/api/9products", function(products) {
         initializeRows(products);
       });
     }
@@ -181,26 +181,26 @@ function createNewRow(product) {
     }
     }
 
-  // LARGE BOX: Creates $14 column
-  function createLgBox14() {
-    let lgBox14 = $(".lgBox14");
+  // LARGE SPECIALTY BOX: Creates $15 column
+  function createLgSpecialtyBox15() {
+    let lgSpecialtyBox15 = $(".lgSpecialtyBox15");
 
     // Get products from database when page loads
     getProducts();
 
     // Resets the products displayed with new products from the database
     function initializeRows(products) {
-      lgBox14.empty();
+      lgSpecialtyBox15.empty();
       var rowsToAdd = [];
       for (var i = 0; i < 5; i++) {
         rowsToAdd.push(createNewRow(products[i]));
       }
-      lgBox14.prepend(rowsToAdd);
+      lgSpecialtyBox15.prepend(rowsToAdd);
     }
 
     // Grabs products from the database and updates the view
     function getProducts() {
-      $.get("/api/14products", function(products) {
+      $.get("/api/15products", function(products) {
         initializeRows(products);
       });
     }
@@ -241,12 +241,12 @@ function createNewRow(product) {
     }
     }
 
-  createLgBox4();
-  createLgBox5();
-  createLgBox8();
-  createLgBox14();
+  createLgSpecialtyBox4();
+  createLgSpecialtyBox5();
+  createLgSpecialtyBox9();
+  createLgSpecialtyBox15();
 
-  let form = document.querySelector("#lgBoxForm");
+  let form = document.querySelector("#lgSpecialtyBoxForm");
 
   form.addEventListener(
     "submit",
