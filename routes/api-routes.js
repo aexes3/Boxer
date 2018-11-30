@@ -38,14 +38,12 @@ module.exports = function(app) {
               currency_code: json.results[i].currency_code,
               quantity: json.results[i].quantity,
               imageURL: json.results[i].Images[0].url_fullxfull,
-              avgReviews:"Unknown",
-              category:json.results[i].category_path.toString(),
-              tags:json.results[i].tags.toString(),
-              size:"Unknown",
-              listingURL:json.results[i].url,
-              category_ID:json.results[i].category_id,
-              shop_section_id:json.results[i].shop_section_id,
-              ending_tsz:json.results[i].ending_tsz,
+              category: json.results[i].category_path.toString(),
+              tags: json.results[i].tags.toString(),
+              size: "Unknown",
+              listingURL: json.results[i].url,
+              category_ID: json.results[i].category_id,
+              ending_tsz: json.results[i].ending_tsz,
               complete: false
             })
               .then(function(dbProduct) {
@@ -68,7 +66,7 @@ module.exports = function(app) {
   //     res.json(dbProduct);
   //   });
   // });
- 
+
   // Get route $4 products
   app.get("/api/4products", function(req, res) {
     db.Product.findAll({
@@ -156,20 +154,18 @@ module.exports = function(app) {
   app.post("/api/products", function(req, res) {
     db.Product.create({
       title: json.results[i].title,
-      product_id: json.results[i].product_id,
+      product_ID: json.results[i].listing_id,
       active: json.results[i].state,
       description: json.results[i].description,
       price: json.results[i].price,
       currency_code: json.results[i].currency_code,
       quantity: json.results[i].quantity,
       imageURL: json.results[i].Images[0].url_fullxfull,
-      avgReviews: "Unknown",
       category: json.results[i].category_path.toString(),
       tags: json.results[i].tags.toString(),
       size: "Unknown",
       listingURL: json.results[i].url,
       category_ID: json.results[i].category_id,
-      shop_section_id: json.results[i].shop_section_id,
       ending_tsz: json.results[i].ending_tsz,
       complete: false
     })
