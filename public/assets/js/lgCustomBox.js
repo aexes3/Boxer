@@ -45,20 +45,20 @@ $(document).ready(function() {
       }).then(getProducts);
     }
 
-    // Constructs a product-item row
-    function createNewRow(product) {
-      var $newInputRow = $(
-        `<input type="radio" name="" name="4" id="${product.title}" value="${product.title}">
-      <label for="${product.title}">${product.title}</label>
-    </input>`
-      );
-      // mdn article radio button to select only one
-
-      // $newInputRow.find("input.edit").css("display", "none");
-      $newInputRow.data("product", product);
-      return $newInputRow;
-    }
-  }
+// Constructs a product-item row
+function createNewRow(product) {
+  var $newInputRow = $(
+    `<input type="radio" name="4" id="${product.shop_section_id}" 
+  value="${product.shop_section_id}">
+  <label for="${product.shop_section_id}">
+  <a href="#" data-toggle="popover" title="${product.title}">
+  <img src="${product.imageURL}" margin="2%" width="175" height="175">
+  </img></a></label></input>`
+  );
+  $newInputRow.data("product", product);
+  return $newInputRow;
+}
+}
 
   // LARGE CUSTOM BOX: Creates $5 column
   function createLgBox5() {
@@ -105,20 +105,20 @@ $(document).ready(function() {
       }).then(getProducts);
     }
 
-    // Constructs a product-item row
-    function createNewRow(product) {
-      var $newInputRow = $(
-        `<input type="radio" name="5" id="${product.title}" value="${product.title}">
-      <label for="${product.title}">${product.title}</label>
-    </input>`
-      );
-      // mdn article radio button to select only one
-
-      // $newInputRow.find("input.edit").css("display", "none");
-      $newInputRow.data("product", product);
-      return $newInputRow;
-    }
-  }
+// Constructs a product-item row
+function createNewRow(product) {
+  var $newInputRow = $(
+    `<input type="radio" name="4" id="${product.shop_section_id}" 
+  value="${product.shop_section_id}">
+  <label for="${product.shop_section_id}">
+  <a href="#" data-toggle="popover" title="${product.title}">
+  <img src="${product.imageURL}" margin="2%" width="175" height="175">
+  </img></a></label></input>`
+  );
+  $newInputRow.data("product", product);
+  return $newInputRow;
+}
+}
 
   // LARGE BOX: Creates $8 column
   function createLgBox8() {
@@ -165,20 +165,20 @@ $(document).ready(function() {
       }).then(getProducts);
     }
 
-    // Constructs a product-item row
-    function createNewRow(product) {
-      var $newInputRow = $(
-        `<input type="radio" name="8" id="${product.title}" value="${product.title}">
-      <label for="${product.title}">${product.title}</label>
-    </input>`
-      );
-      // mdn article radio button to select only one
-
-      // $newInputRow.find("input.edit").css("display", "none");
-      $newInputRow.data("product", product);
-      return $newInputRow;
-    }
-  }
+// Constructs a product-item row
+function createNewRow(product) {
+  var $newInputRow = $(
+    `<input type="radio" name="4" id="${product.shop_section_id}" 
+  value="${product.shop_section_id}">
+  <label for="${product.shop_section_id}">
+  <a href="#" data-toggle="popover" title="${product.title}">
+  <img src="${product.imageURL}" margin="2%" width="175" height="175">
+  </img></a></label></input>`
+  );
+  $newInputRow.data("product", product);
+  return $newInputRow;
+}
+}
 
   // LARGE BOX: Creates $14 column
   function createLgBox14() {
@@ -225,20 +225,21 @@ $(document).ready(function() {
       }).then(getProducts);
     }
 
-    // Constructs a product-item row
-    function createNewRow(product) {
-      var $newInputRow = $(
-        `<input type="radio" name="14" id="${product.title}" value="${product.title}">
-      <label for="${product.title}">${product.title}</label>
-    </input>`
-      );
-      // mdn article radio button to select only one
+// Constructs a product-item row
+function createNewRow(product) {
+  var $newInputRow = $(
+    `<input type="radio" name="4" id="${product.shop_section_id}" 
+  value="${product.shop_section_id}">
+  <label for="${product.shop_section_id}">
+  <a href="#" data-toggle="popover" title="${product.title}">
+  <img src="${product.imageURL}" margin="2%" width="175" height="175">
+  </img></a></label></input>`
+  );
+  $newInputRow.data("product", product);
+  return $newInputRow;
+}
+}
 
-      // $newInputRow.find("input.edit").css("display", "none");
-      $newInputRow.data("product", product);
-      return $newInputRow;
-    }
-  }
   createLgBox4();
   createLgBox5();
   createLgBox8();
