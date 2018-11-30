@@ -1,3 +1,11 @@
+// create table boxers.itemsSold(
+//     itemsSold_ID int not null auto_increment PRIMARY KEY, -- dynamically created
+//     listing_ID int, -- from etsy (prodcuts that were sold)
+//         user_ID int, -- from firebase
+//         -- box_ID int, NICE TO HAVE LATER
+//     soldOn_Date Date, -- dynamically created
+//     salesPrice decimal (20,4) -- from etsy
+//     );
 module.exports = function (sequelize, DataTypes) {
     var SoldItem = sequelize.define("SoldItem", {
       id: {//our id
@@ -37,4 +45,4 @@ module.exports = function (sequelize, DataTypes) {
       }
     });
     return SoldItem;
-};
+  };
