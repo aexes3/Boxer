@@ -13,7 +13,7 @@ they will not see the product again.
 
 * [Node](https://nodejs.org/) - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
 * [MySQL](https://www.mysql.com/) - MySQL is an open source relational database management system. 
-    * MySQL housea viewed products, sold producuts, user details and user pet information
+    * MySQL stores viewed products, sold producuts, user details and user pet information
 * [Firebase](https://firebase.google.com/) - Firebase provides a realtime database and backend as a service. 
     * Firebase is used for authentication
 * [Express](https://expressjs.com/) - Web applicatoin framework for Node.js
