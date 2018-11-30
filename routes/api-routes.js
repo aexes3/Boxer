@@ -26,26 +26,26 @@ module.exports = function(app) {
         return console.log("\nError occurred: " + err);
       } else if (response.statusCode === 200) {
         let json = JSON.parse(body);
-        console.log(json.results[0].images);
+        console.log(json.results[0]);
         if (json.length != 0) {
           for (let i = 0; i < json.results.length; i++) {
             db.Product.create({
               title: json.results[i].title,
-              product_id: json.results[i].product_id,
+              product_ID: json.results[i].listing_id,
               active: json.results[i].state,
               description: json.results[i].description,
               price: json.results[i].price,
               currency_code: json.results[i].currency_code,
               quantity: json.results[i].quantity,
               imageURL: json.results[i].Images[0].url_fullxfull,
-              avgReviews: "Unknown",
-              category: json.results[i].category_path.toString(),
-              tags: json.results[i].tags.toString(),
-              size: "Unknown",
-              listingURL: json.results[i].url,
-              category_ID: json.results[i].category_id,
-              shop_section_id: json.results[i].shop_section_id,
-              ending_tsz: json.results[i].ending_tsz,
+              avgReviews:"Unknown",
+              category:json.results[i].category_path.toString(),
+              tags:json.results[i].tags.toString(),
+              size:"Unknown",
+              listingURL:json.results[i].url,
+              category_ID:json.results[i].category_id,
+              shop_section_id:json.results[i].shop_section_id,
+              ending_tsz:json.results[i].ending_tsz,
               complete: false
             })
               .then(function(dbProduct) {
@@ -68,7 +68,7 @@ module.exports = function(app) {
   //     res.json(dbProduct);
   //   });
   // });
-
+ 
   // Get route $4 products
   app.get("/api/4products", function(req, res) {
     db.Product.findAll({
@@ -102,6 +102,17 @@ module.exports = function(app) {
     });
   });
 
+  // Get route $9 products
+  app.get("/api/9products", function(req, res) {
+    db.Product.findAll({
+      where: {
+        price: 9
+      }
+    }).then(function(dbProduct) {
+      res.json(dbProduct);
+    });
+  });
+
   // Get route $14 products
   app.get("/api/14products", function(req, res) {
     db.Product.findAll({
@@ -113,7 +124,18 @@ module.exports = function(app) {
     });
   });
 
-  // // Get route BETWEEM products
+  // Get route $15 products
+  app.get("/api/15products", function(req, res) {
+    db.Product.findAll({
+      where: {
+        price: 15
+      }
+    }).then(function(dbProduct) {
+      res.json(dbProduct);
+    });
+  });
+
+  // // Get route BETWEEN products
   // app.get("/api/products", function(req, res) {
   //   // console.log(dbProduct)
   //   console.log(req.params.title)
