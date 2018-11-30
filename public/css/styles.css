@@ -1,3 +1,11 @@
+/* GLOBAL COLORS */
+/* #222222 */
+/* #f56400 */
+/* rgb(158, 203, 205) */
+/* #f9a266 */
+/* rgb(56, 52, 52); */
+/* rgb(175, 111, 51) */
+
 body, html{
     color: rgb(56, 52, 52);
     height: 100%;
@@ -35,7 +43,7 @@ body, html{
     font-size: 20px;
     font-family: 'Centra',Arial,Helvetica,Verdana,sans-serif;
     display: inline;
-    color: rgb(81, 175, 139);
+    color:rgb(158, 203, 205);
 }
 
 h2.font-bold{
@@ -146,34 +154,3 @@ height: 300px;
     }
 }
 
-/* ------JULIES---------   */
-.product-list {
-    margin: 0 auto;
-    margin-top: 75px;
-}
-
-input.new-item:focus {
-    outline: none;
-}
-
-.list-group-item > button.complete {
-    float: right;
-    height: 25px;
-    margin-left: 5px;
-}
-
-.edit {
-    width: 100%;
-}
-
-.hide {
-    display: none;
-}
-
-.jumbotron {
-    text-align: center;
-}
-
-.navbar img {
-    border-radius: 15%;
-}
