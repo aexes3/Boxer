@@ -48,7 +48,7 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
+        `<input type="radio" name="" name="4" id="${product.title}" value="${product.title}">
       <label for="${product.title}">${product.title}</label>
     </input>`
       );
@@ -108,7 +108,7 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
+        `<input type="radio" name="5" id="${product.title}" value="${product.title}">
       <label for="${product.title}">${product.title}</label>
     </input>`
       );
@@ -168,7 +168,7 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
+        `<input type="radio" name="8" id="${product.title}" value="${product.title}">
       <label for="${product.title}">${product.title}</label>
     </input>`
       );
@@ -228,7 +228,7 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
+        `<input type="radio" name="14" id="${product.title}" value="${product.title}">
       <label for="${product.title}">${product.title}</label>
     </input>`
       );
@@ -243,4 +243,24 @@ $(document).ready(function() {
   createLgBox5();
   createLgBox8();
   createLgBox14();
-});  
+
+  let form = document.querySelector("#lgBoxForm");
+
+  form.addEventListener(
+    "submit",
+    function(event) {
+      let data = new FormData(form);
+      // let output = "";
+
+      for (const entry of data) {
+        // output = entry[0] + " = " + entry[1] + "\r";
+      for (var i = 0; i < entry.length; i++) {
+console.log("entry[i]", entry[i])
+console.log(entry);
+      }
+    }
+      event.preventDefault();
+    },
+    false
+  );
+});

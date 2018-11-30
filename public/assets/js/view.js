@@ -1,10 +1,8 @@
 $(document).ready(function() {
-
-  // SMALL CUSTOM BOX
   // SMALL BOX: Creates $4 column
   function createSmBox4() {
     let smBox4 = $(".smBox4");
-      // Get products from database when page loads
+    // Get products from database when page loads
 
     getProducts();
 
@@ -21,17 +19,9 @@ $(document).ready(function() {
     // Grabs products from the database and updates the view
     function getProducts() {
       $.get("/api/4products", function(products) {
-        // console.log("products are:", products);
-
-        // for (var i = 0; i < data.length; i++) {
-        //   console.log(data[i].title);
-        //   $(".smBox4").append("<p>" + data[i].title + "</p>");
-        // }
         initializeRows(products);
       });
     }
-
-
 
     // MIGHT NEED THIS...
     // This function starts updating a product in the database if a user hits the "Enter Key"
@@ -57,12 +47,11 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
-      <label for="${product.title}">$${product.price}</label>
+        `<input type="radio" name="4" id="${product.title}" value="${
+          product.title
+        }">
+      <label for="${product.title}">${product.price}</label>
     </input>`
-    // `<input type="radio" id="${product.title}" value="${product.title}">
-    //   <label for="${product.title}">price:$${product.price},${product.title}</label>
-    // </input>`
       );
       // mdn article radio button to select only one
 
@@ -120,12 +109,11 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
-        <label for="${product.title}">$${product.price}</label>
+        `<input type="radio" name="5" id="${product.title}" value="${
+          product.title
+        }">
+        <label for="${product.title}">${product.price}</label>
       </input>`
-    //     `<input type="radio" id="${product.title}" value="${product.title}">
-    //   <label for="${product.title}">${product.title}</label>
-    // </input>`
       );
       // mdn article radio button to select only one
 
@@ -138,7 +126,7 @@ $(document).ready(function() {
   // SMALL CUSTOM BOX: Creates $8 column
   function createSmBox8() {
     let smBox8 = $(".smBox8");
-      // Get products from database when page loads
+    // Get products from database when page loads
 
     getProducts();
 
@@ -183,12 +171,11 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
-        <label for="${product.title}">$${product.price}</label>
+        `<input type="radio" name="8" id="${product.title}" value="${
+          product.title
+        }">
+        <label for="${product.title}">${product.price}</label>
       </input>`
-    //     `<input type="radio" id="${product.title}" value="${product.title}">
-    //   <label for="${product.title}">${product.title}</label>
-    // </input>`
       );
       // mdn article radio button to select only one
 
@@ -246,12 +233,11 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" id="${product.title}" value="${product.title}">
-        <label for="${product.title}">$${product.price}</label>
+        `<input type="radio" name="14" id="${product.title}" value="${
+          product.title
+        }">
+        <label for="${product.title}">${product.price}</label>
       </input>`
-    //     `<input type="radio" id="${product.title}" value="${product.title}">
-    //   <label for="${product.title}">${product.title}</label>
-    // </input>`
       );
       // mdn article radio button to select only one
 
@@ -265,12 +251,31 @@ $(document).ready(function() {
   createSmBox5();
   createSmBox8();
   createSmBox14();
-});  
+
+  let form = document.querySelector("#smBoxForm");
+
+  form.addEventListener(
+    "submit",
+    function(event) {
+      let data = new FormData(form);
+      // let output = "";
+
+      for (const entry of data) {
+        // output = entry[0] + " = " + entry[1] + "\r";
+      for (var i = 0; i < entry.length; i++) {
+console.log("entry[i]", entry[i])
+console.log(entry);
+      }
+    }
+      event.preventDefault();
+    },
+    false
+  );
+});
+
 //  NEED THIS IF BREAK THESE APART INTO SEP PAGES
 
-
-
-// // LARGE CUSTOM BOX 
+// // LARGE CUSTOM BOX
 //   // LARGE BOX: Creates $4 column
 //   function createLgBox4() {
 //     let lgBox4 = $(".lgBox4");
@@ -540,7 +545,6 @@ $(document).ready(function() {
 //   createLgBox8();
 //   createLgBox14();
 // // });  NEED THIS IF BREAK INTO SEP FILES
-
 
 // // SMALL SPECIALTY BOX
 //   // SMALL SPECIALTY BOX: Creates $4 column
@@ -813,9 +817,7 @@ $(document).ready(function() {
 //   createSmSpecialtyBox15();
 // // });   NEED THIS IF BREAK THESE APART INTO SEP PAGES
 
-
-
-// // LARGE SPECIALTY BOX 
+// // LARGE SPECIALTY BOX
 //   // LARGE SPECIALTY BOX: Creates $4 column
 //   function createLgSpecialtyBox4() {
 //     let lgSpecialtyBox4 = $(".lgSpecialtyBox4");
@@ -1085,15 +1087,3 @@ $(document).ready(function() {
 //   createLgSpecialtyBox9();
 //   createLgSpecialtyBox15();
 // });
-
-
-
-
-
-
-
-
-
-
-
-
