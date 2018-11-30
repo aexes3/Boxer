@@ -15,14 +15,14 @@ they will not see the product again.
 * [MySQL](https://www.mysql.com/) - MySQL is an open source relational database management system. 
     * MySQL stores viewed products, sold producuts, user details and user pet information
 * [Firebase](https://firebase.google.com/) - Firebase provides a realtime database and backend as a service. 
-    * Firebase is used for authentication
+    * Firebase is used for authentication   
 * [Express](https://expressjs.com/) - Web applicatoin framework for Node.js
     * Express is used handle routes and serve static files
-* [Bootstrap](http://www.dropwizard.io/1.0.2/docs/) - Bootstrap is an open-source front-end framework for designing websites and web applications
+* [Bootstrap](https://getbootstrap.com/) - Bootstrap is an open-source front-end framework for designing websites and web applications
     * Bootstrap is used to create forms and other interface components
-* [Handlebars](https://maven.apache.org/) - Handlebars is a templating engine that allows for the creation of dynamic congtent
+* [Handlebars](https://handlebarsjs.com/) - Handlebars is a templating engine that allows for the creation of dynamic congtent
     * Handlebars is used to render content when user is selecting customized boxes
-* [Etsy](https://rometools.github.io/rome/) - Unique gifts including homemade wares and jewelery
+* [Etsy](https://www.etsy.com/developers/documentation/getting_started/api_basics) - Unique gifts including homemade wares and jewelery
     * Etsy API is currently the only API that powers boxer's content, however, the framework is in place to include other API content
 
 
