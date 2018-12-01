@@ -117,10 +117,13 @@ ul {
    margin-bottom: 10px;
    display: none;
 }
-
+.btn {
+   background-color: #9b3e00;
+   border:#9b3e00;
+}
 #register {
    background-color: #9b3e00;
-   border: #f56400;
+   border:#9b3e00;
 }
 
 /* LARGE SCREENS */
