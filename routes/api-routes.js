@@ -2,11 +2,88 @@
 var db = require("../models");
 const request = require("request");
 
+/***************************************************************/
+//--> start AR added for firebase and mySQL integration
+var firebase = require('firebase');
+var mysql=require("mysql2");
+var connection = mysql.createConnection({
+  host: "localhost",
+
+  // Your port; if not 3306
+  port: 3306,
+
+  // Your username
+  user: "root",
+
+  // Your password
+  password: "tr1bal",
+  database: "boxers"
+});
+connection.connect(function(err) {
+  if (err) throw err;
+  
+});
+//we really need to try and move these to 'env'
+var config = {
+  apiKey: "AIzaSyCwh82TllCfD1JUO7YhzGZKT6pVH-HJzbQ",
+  authDomain: "boxer-80df3.firebaseapp.com",
+  databaseURL: "https://boxer-80df3.firebaseio.com",
+  projectId: "boxer-80df3",
+  storageBucket: "",
+  messagingSenderId: "554092423820"
+};
+firebase.initializeApp(config);
+
+// Getting Db instance and fireBAse date snapshot
+var userData = firebase.database().ref('users');
+var fbData = firebase.database();
+fbData.ref("/users").on("child_added", function (snapshot) {
+
+  // Set the variables equal to the stored values in Firebase
+  petBreedF = snapshot.val().dogBreed;
+  petGenderF = snapshot.val().dogGender;
+  petSizeF = snapshot.val().dogSize;
+  emailF = snapshot.val().email;
+  petNameF= snapshot.val().petsName;
+  addressF=snapshot.val().address[0];
+  cityF=snapshot.val().address[2];
+  stateF=snapshot.val().address[3];
+  zipF=snapshot.val().address[4];
+  emailF=snapshot.val().email;
+  user_IDFB=snapshot.key;
+  nameFull=snapshot.val().name;
+  nameF=nameFull.substr(0,nameFull.indexOf(' '));
+  nameL=nameFull.substr(nameFull.indexOf(nameF)+nameF.length+1);
+
+var sql2="insert into Users (id, emailAddress, firstName, lastName, address, city, state, zip, createdAt,updatedAt,lastLoginDate) values (\'"+user_IDFB+"\',\'"+emailF+"\',\'"+nameF+"\',\'"+nameL+"\',\'"+addressF+"\',\'"+cityF+"\',\'"+stateF+"\',\'"+zipF+"\',SYSDATE(),SYSDATE(),SYSDATE());"; 
+var sql="insert into Pets (petName, petSize, petBreed, user_ID, createdAt,updatedAt) values (\'"+petNameF+"\',\'"+petSizeF+"\',\'"+petBreedF+"\',\'"+user_IDFB+"\',SYSDATE(),SYSDATE());";
+ connection.query(sql2, function (err, result) {
+    if (err) {
+      console.log("Users:  "+sql2);
+    };
+
+  });
+  connection.query(sql, function (err, result) {
+    if (err) {
+      console.log("Pets:  " + sql);
+    };
+  });
+
+
+}, function (errorObject) {
+console.log("The read failed: " + errorObject.code);
+}); // ENDS database retrieval AND witing to DB
+
+
+
+//<-- end AR added for firebase and mysQL integration
+/***************************************************************/
+
 // Routes
 module.exports = function(app) {
   app.get("/api/getproducts", function(req, res) {
     let minPrice = "&min_price=3";
-    let maxPrice = "&max_price=14";
+    let maxPrice = "&max_price=18";
     let tags = "&tags=dog_funny";
     let api = "&api_key=2ds0prvu2hqgcjocnj71ioss";
     // let specialty = '_"+
