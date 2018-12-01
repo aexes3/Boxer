@@ -1,13 +1,13 @@
+//AR updated id from auto increment to string and using the key in Firabase now as the primary key
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
         id: {//our id
-            type: DataTypes.INTEGER,
-            autoIncrement: false,
+            type: DataTypes.STRING,
             primaryKey: true
         },
-        emailAddress: {//satus from etsy
+        emailAddress: {//status from etsy
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [1]
             }
@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             // AllowNull is a flag that restricts a product from being entered if it doesn't
             // have a title value
-            allowNull: false,
+            allowNull: true,
             // len is a validation that checks that our product is between 1 and 140 characters
             validate: {
                 len: [1]
@@ -49,7 +49,7 @@ module.exports = function (sequelize, DataTypes) {
             len: [1]
         },
         zip: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 len: [1]
