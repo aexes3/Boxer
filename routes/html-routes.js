@@ -22,8 +22,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/lgCustomBox.html"));
   });
 
-  app.get("/lgSpecialtyBox", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/lgSpecialtyBox.html"));
+  app.get("/lgCustomBox", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/lgCustomBox.html"));
+  });
+
+  app.get("/cart", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/cart.html"));
+  });
+
+  app.get("/contact", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/contact.html"));
   });
 
 };
