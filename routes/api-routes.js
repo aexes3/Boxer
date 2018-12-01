@@ -6,19 +6,19 @@ const request = require("request");
 //--> start AR added for firebase and mySQL integration
 var firebase = require('firebase');
 var mysql=require("mysql2");
-var connection = mysql.createConnection({
-  host: "localhost",
+var connection;
 
-  // Your port; if not 3306
-  port: 3306,
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'boxers'
+  });
+};
 
-  // Your username
-  user: "root",
-
-  // Your password
-  password: "tr1bal",
-  database: "boxers"
-});
 connection.connect(function(err) {
   if (err) throw err;
   
