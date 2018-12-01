@@ -3,6 +3,7 @@ DROP DATABASE IF EXISTS boxers;
 -- Creates the "boxers" database --
 CREATE DATABASE boxers;
 
+
 CREATE TABLE `Pets` (
   `id` int(11) DEFAULT NULL,
   `petName` varchar(255) DEFAULT NULL,
@@ -71,4 +72,16 @@ CREATE TABLE `Users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+  Create table `Favorites`(
+      user_id int not null auto_increment PRIMARY KEY, ##will need to change to whatever the key value is from user table for session
+      holiday  varchar(20),
+      sport  varchar(20),
+      tv  varchar(20),
+      game varchar(20),
+      marvel varchar(20),
+      food  varchar(20),
+      soda varchar(20),
+      restaurant varchar(20),
+      lang varchar(20) 
 
+  );
