@@ -22,8 +22,12 @@ they will not see the product again.
     * Bootstrap is used to create forms and other interface components
 * [Handlebars](https://handlebarsjs.com/) - Handlebars is a templating engine that allows for the creation of dynamic congtent
     * Handlebars is used to render content when user is selecting customized boxes
+* [Sequelize](docs.sequelizejs.com/) -  a promise-based ORM for Node.js 
+    * Sequelize models are used to update product tables in mySQL and create table initial table structure 
 * [Etsy](https://www.etsy.com/developers/documentation/getting_started/api_basics) - Unique gifts including homemade wares and jewelery
     * Etsy API is currently the only API that powers boxer's content, however, the framework is in place to include other API content
+
+
 
 
 ## Authors
