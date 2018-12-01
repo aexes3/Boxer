@@ -1,11 +1,11 @@
 $(document).ready(function() {
-  $('[data-toggle="popover"]').popover(); 
+  $('[data-toggle="popover"]').popover();
 
-  // SMALL SPECIALTY BOX: Creates $4 column
-  function createSmSpecialtyBox4() {
+  // SMALL BOX: Creates $4 column
+  function createsmSpecialtyBox4() {
     let smSpecialtyBox4 = $(".smSpecialtyBox4");
-
     // Get products from database when page loads
+
     getProducts();
 
     // Resets the products displayed with new products from the database
@@ -46,36 +46,42 @@ $(document).ready(function() {
       }).then(getProducts);
     }
 
-    // function updateProduct(product) {
-    //   $.ajax({
-    //     method: "PUT",
-    //     url: "/api/soldItems",
-    //     data: product
-    //   }).then(getProducts);
-    // }
+  //   // Constructs a product-item row
+  //   function createNewRow(product) {
+  //     var $newInputRow = $(
+  //       `<input type="radio" name="4" id="${product.product_ID}" 
+  //     value="${product.product_ID}">
+  //     <label for="${product.product_ID}">
+  //     <a href="#" data-toggle="popover" title="${product.title}">
+  //     <img src="${product.imageURL}" margin="2%" width="175" height="175">
+  //     </img></a></label></input>`
+  //     );
+  //     $newInputRow.data("product", product);
+  //     return $newInputRow;
+  //   }
+  // }
 
-    
+   // Constructs a product-item row
+   function createNewRow(product) {
+    var $newInputRow = $(
+      `<ul><li><input type="radio" name="4" id="${product.product_ID}" 
+    value="${product.product_ID}">
+    <label for="${product.product_ID}">
+    <a href="#" data-toggle="popover" title="${product.title}">
+    <img src="${product.imageURL}" width="175" height="175">
+    </img></a></label></input><div class="check"></div></li>
+    </ul>`
+    );
+    $newInputRow.data("product", product);
+    return $newInputRow;
+  }
+}
 
-    // Constructs a product-item row
-    function createNewRow(product) {
-      var $newInputRow = $(
-        `<input type="radio" name="4" id="${product.product_ID}" 
-      value="${product.product_ID}">
-      <label for="${product.product_ID}">
-      <a href="#" data-toggle="popover" title="${product.title}">
-      <img src="${product.imageURL}" margin="2%" width="175" height="175">
-      </img></a></label></input>`
-      );
-      $newInputRow.data("product", product);
-      return $newInputRow;
-    }
-    }
-
-  // SMALL SPECIALTY BOX: Creates $5 column
-  function createSmSpecialtyBox5() {
+  // SMALL CUSTOM BOX: Creates $5 column
+  function createsmSpecialtyBox5() {
     let smSpecialtyBox5 = $(".smSpecialtyBox5");
-
     // Get products from database when page loads
+
     getProducts();
 
     // Resets the products displayed with new products from the database
@@ -119,23 +125,24 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" name="4" id="${product.product_ID}" 
-      value="${product.product_ID}">
-      <label for="${product.product_ID}">
-      <a href="#" data-toggle="popover" title="${product.title}">
-      <img src="${product.imageURL}" margin="2%" width="175" height="175">
-      </img></a></label></input>`
+        `<ul><li><input type="radio" name="5" id="${product.product_ID}" 
+        value="${product.product_ID}">
+        <label for="${product.product_ID}">
+        <a href="#" data-toggle="popover" title="${product.title}">
+        <img src="${product.imageURL}" width="175" height="175">
+        </img></a></label></input><div class="check"></div></li>
+        </ul>`
       );
       $newInputRow.data("product", product);
       return $newInputRow;
     }
-    }
+  }
 
-  // SMALL SPECIALTY BOX: Creates $9 column
-  function createSmSpecialtyBox9() {
+  // SMALL BOX: Creates $9 column
+  function createsmSpecialtyBox9() {
     let smSpecialtyBox9 = $(".smSpecialtyBox9");
-
     // Get products from database when page loads
+
     getProducts();
 
     // Resets the products displayed with new products from the database
@@ -179,38 +186,39 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" name="9" id="${product.product_ID}" 
-      value="${product.product_ID}">
-      <label for="${product.product_ID}">
-      <a href="#" data-toggle="popover" title="${product.title}">
-      <img src="${product.imageURL}" margin="2%" width="175" height="175">
-      </img></a></label></input>`
+        `<ul><li><input type="radio" name="9" id="${product.product_ID}" 
+        value="${product.product_ID}">
+        <label for="${product.product_ID}">
+        <a href="#" data-toggle="popover" title="${product.title}">
+        <img src="${product.imageURL}" width="175" height="175">
+        </img></a></label></input><div class="check"></div></li>
+        </ul>`
       );
       $newInputRow.data("product", product);
       return $newInputRow;
     }
-    }
+  }
 
-  // SMALL SPECIALTY BOX: Creates $15 column
-  function createSmSpecialtyBox15() {
-    let smSpecialtyBox15 = $(".smSpecialtyBox15");
-
+  // SMALL CUSTOM BOX: Creates $14 column
+  function createsmSpecialtyBox14() {
+    let smSpecialtyBox14 = $(".smSpecialtyBox14");
     // Get products from database when page loads
+
     getProducts();
 
     // Resets the products displayed with new products from the database
     function initializeRows(products) {
-      smSpecialtyBox15.empty();
+      smSpecialtyBox14.empty();
       var rowsToAdd = [];
       for (var i = 0; i < 5; i++) {
         rowsToAdd.push(createNewRow(products[i]));
       }
-      smSpecialtyBox15.prepend(rowsToAdd);
+      smSpecialtyBox14.prepend(rowsToAdd);
     }
 
     // Grabs products from the database and updates the view
     function getProducts() {
-      $.get("/api/15products", function(products) {
+      $.get("/api/14products", function(products) {
         initializeRows(products);
       });
     }
@@ -239,38 +247,38 @@ $(document).ready(function() {
     // Constructs a product-item row
     function createNewRow(product) {
       var $newInputRow = $(
-        `<input type="radio" name="4" id="${product.product_ID}" 
-      value="${product.product_ID}">
-      <label for="${product.product_ID}">
-      <a href="#" data-toggle="popover" title="${product.title}">
-      <img src="${product.imageURL}" margin="2%" width="175" height="175">
-      </img></a></label></input>`
+        `<ul><li><input type="radio" name="14" id="${product.product_ID}" 
+        value="${product.product_ID}">
+        <label for="${product.product_ID}">
+        <a href="#" data-toggle="popover" title="${product.title}">
+        <img src="${product.imageURL}" width="175" height="175">
+        </img></a></label></input><div class="check"></div></li>
+        </ul>`
       );
       $newInputRow.data("product", product);
       return $newInputRow;
     }
-    }
+  }
 
-  createSmSpecialtyBox4();
-  createSmSpecialtyBox5();
-  createSmSpecialtyBox9();
-  createSmSpecialtyBox15();
+  createsmSpecialtyBox4();
+  createsmSpecialtyBox5();
+  createsmSpecialtyBox9();
+  createsmSpecialtyBox14();
 
   let form = document.querySelector("#smSpecialtyBoxForm");
 
   form.addEventListener(
-    "smSpecialtySubmit",
+    "submit",
     function(event) {
       let data = new FormData(form);
       // let output = "";
 
       for (const entry of data) {
         // output = entry[0] + " = " + entry[1] + "\r";
-      for (var i = 0; i < entry.length; i++) {
-console.log("entry[i]", entry[i])
-console.log(entry);
+        for (var i = 0; i < entry.length; i++) {
+          console.log(entry);
+        }
       }
-    }
       event.preventDefault();
     },
     false
