@@ -1,21 +1,23 @@
+// Dependencies
 var express = require("express");
-var PORT = process.env.PORT || 8080;
+
 var app = express();
+var PORT = process.env.PORT || 8044;
+var db = require("./models");
 
-app.use(express.static("public"));
-
+// Set up Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var exphbs = require("express-handlebars");
+// Static directory
+app.use(express.static("public"));
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// Routes
+require("./routes/api-routes.js")(app);
 
-var routes = require("./controllers/burgers_controllers");
-
-app.use(routes);
-
-app.listen(PORT, function() {
-  console.log("Server listening on: http://localhost:" + PORT);
+// Sync sequelize models, then start our Express app
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });

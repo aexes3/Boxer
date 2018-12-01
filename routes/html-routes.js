@@ -1,16 +1,37 @@
-module.exports = function(app) {
+var path = require("path");
 
-    app.get("/approval", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/approval.html"));
-    });
+module.exports = function(app) {
   
-    app.get("/boxes", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/boxes.html"));
-    });
-  
-    // If no matching route is found default to home
-    app.get("*", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/home.html"));
-    });
-  };
-  
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+  app.get("/smCustomBox", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/smCustomBox.html"));
+  });
+
+  app.get("/smSpecialtyBox", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/smSpecialtyBox.html"));
+  });
+
+  app.get("/lgCustomBox", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/lgCustomBox.html"));
+  });
+
+  app.get("/lgCustomBox", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/lgCustomBox.html"));
+  });
+
+  app.get("/cart", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/cart.html"));
+  });
+
+  app.get("/contact", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/contact.html"));
+  });
+
+};
